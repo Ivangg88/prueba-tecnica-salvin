@@ -18,7 +18,10 @@ const LeafletMap = ({ marks }: LeafletMapProps) => {
       />
 
       {marks.map((mark) => (
-        <Marker position={[mark.coordenates[0], mark.coordenates[1]]}>
+        <Marker
+          key={mark.description}
+          position={[mark.coordenates[0], mark.coordenates[1]]}
+        >
           <Popup> {mark.description}</Popup>
         </Marker>
       ))}

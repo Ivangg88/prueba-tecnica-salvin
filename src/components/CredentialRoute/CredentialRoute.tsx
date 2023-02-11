@@ -13,6 +13,7 @@ const CredentialRoutes = ({ children }: ProtectorRoutesProps) => {
 
   if (!isLogged) {
     alert("The session has timed out.\n Please login again.");
+    localStorage.removeItem("token");
   }
 
   return isLogged ? children : <Navigate to={"/login"} />;
