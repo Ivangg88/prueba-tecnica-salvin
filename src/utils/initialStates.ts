@@ -1,4 +1,3 @@
-import { debug } from "console";
 import auth from "../middlewares/authentication";
 import { Token, UserLoged } from "../types/interfaces";
 
