@@ -13,7 +13,7 @@ const LoginFormikForm = (): JSX.Element => {
         data-testid="loginForm"
       >
         <Field
-          class="form-container__input"
+          className="form-container__input"
           label="Username"
           name="userName"
           placeholder="username"
@@ -28,7 +28,7 @@ const LoginFormikForm = (): JSX.Element => {
         </ErrorMessage>
 
         <Field
-          class="form-container__input"
+          className="form-container__input"
           label="Password"
           name="password"
           placeholder="********"
