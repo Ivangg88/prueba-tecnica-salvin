@@ -4,7 +4,6 @@ import LoginPage from "../../pages/LoginPage/LoginPage";
 import MapsPage from "../../pages/MapsPage/MapsPage";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import CredentialRoutes from "../CredentialRoute/CredentialRoute";
-import { Header } from "../Header/Header";
 import Layout from "../Layout/Layout";
 
 const App = (): JSX.Element => {
