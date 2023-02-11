@@ -1,5 +1,5 @@
 const App = (): JSX.Element => {
-  return <span>Be to wear</span>;
+  return <h1>App</h1>;
 };
 
 export default App;
