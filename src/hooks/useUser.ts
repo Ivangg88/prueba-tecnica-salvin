@@ -22,8 +22,10 @@ export const useUser = () => {
         localStorage.setItem("token", userToken);
         dispatch(loginUserActionCreator({ ...tokenPayload, token: userToken }));
         alert(`User ${user.userName} logged`);
+        return true;
       } catch (error: any) {
         alert(error.message);
+        return false;
       }
     },
     [dispatch]
