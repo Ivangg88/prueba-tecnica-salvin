@@ -15,10 +15,11 @@ export const useUser = () => {
         const tokenPayload: Token = {
           userName: user.userName,
           isLogged: true,
-          timeStamp: new Date(),
+          timeStamp: new Date().toISOString(),
         };
 
         const userToken = JSON.stringify(tokenPayload);
+
         localStorage.setItem("token", userToken);
         dispatch(loginUserActionCreator({ ...tokenPayload, token: userToken }));
         alert(`User ${user.userName} logged`);

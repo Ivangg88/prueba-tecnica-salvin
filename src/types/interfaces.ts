@@ -7,11 +7,11 @@ export interface UserLoged {
   userName: string;
   token: string;
   isLogged: boolean;
-  timeStamp: Date;
+  timeStamp: string;
 }
 
 export interface Token {
   userName: string;
-  timeStamp: Date;
+  timeStamp: string;
   isLogged: boolean;
 }
