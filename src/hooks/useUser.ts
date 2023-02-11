@@ -1,10 +1,15 @@
 import { useCallback } from "react";
 import { Token, Userlogin } from "../types/interfaces";
 import { useAppDispatch } from "../app/hooks";
-import { loginUserActionCreator } from "../store/userSlice";
+import {
+  loginUserActionCreator,
+  logoutUserActionCreator,
+} from "../store/userSlice";
+import { useNavigate } from "react-router-dom";
 
 export const useUser = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const loginUser = useCallback(
     (user: Userlogin) => {
@@ -24,16 +29,23 @@ export const useUser = () => {
         localStorage.setItem("token", userToken);
         dispatch(loginUserActionCreator({ ...tokenPayload, token: userToken }));
         alert(`User ${user.userName} logged`);
+        navigate("/");
         return true;
       } catch (error: any) {
         alert(error.message);
         return false;
       }
     },
-    [dispatch]
+    [dispatch, navigate]
   );
+
+  const logoutUser = useCallback(async () => {
+    await localStorage.removeItem("token");
+    dispatch(logoutUserActionCreator());
+  }, [dispatch]);
 
   return {
     loginUser,
+    logoutUser,
   };
 };
