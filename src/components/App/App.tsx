@@ -4,25 +4,29 @@ import LoginPage from "../../pages/LoginPage/LoginPage";
 import MapsPage from "../../pages/MapsPage/MapsPage";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import CredentialRoutes from "../CredentialRoute/CredentialRoute";
+import { Header } from "../Header/Header";
 
 const App = (): JSX.Element => {
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to={"/home"} />} />
-      <Route path="/home" element={<HomePage />} />
-      <Route path="/login" element={<LoginPage />} />
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Navigate to={"/home"} />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
 
-      <Route
-        path="/maps"
-        element={
-          <CredentialRoutes>
-            <MapsPage />
-          </CredentialRoutes>
-        }
-      />
+        <Route
+          path="/maps"
+          element={
+            <CredentialRoutes>
+              <MapsPage />
+            </CredentialRoutes>
+          }
+        />
 
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
   );
 };
 
