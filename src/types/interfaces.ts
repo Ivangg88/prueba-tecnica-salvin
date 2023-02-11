@@ -15,3 +15,8 @@ export interface Token {
   timeStamp: string;
   isLogged: boolean;
 }
+
+export interface Mark {
+  description: string;
+  coordenates: Array<number>;
+}
