@@ -1,8 +1,28 @@
-import { UserLoged } from "../types/interfaces";
+import auth from "../middlewares/authentication";
+import { Token, UserLoged } from "../types/interfaces";
 
-export const initialLoggedUser: UserLoged = {
-  isLogged: false,
-  token: "",
-  userName: "",
-  timeStamp: new Date("1980-01-01").toISOString(),
+const getInitialUser = (): UserLoged => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    return {
+      isLogged: false,
+      timeStamp: "",
+      userName: "",
+      token: "",
+    };
+  }
+
+  const user: Token = JSON.parse(token!);
+
+  const userLoged: UserLoged = {
+    userName: user.userName,
+    isLogged: auth(token)!,
+    timeStamp: new Date().toISOString(),
+    token: token,
+  };
+
+  return userLoged;
 };
+
+export const initialLoggedUser = getInitialUser();
