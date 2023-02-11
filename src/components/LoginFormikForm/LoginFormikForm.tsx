@@ -12,6 +12,7 @@ const LoginFormikForm = (): JSX.Element => {
         className="form-container"
         data-testid="loginForm"
       >
+        <h1>Login</h1>
         <Field
           className="form-container__input"
           label="Username"
@@ -42,7 +43,11 @@ const LoginFormikForm = (): JSX.Element => {
           )}
         </ErrorMessage>
 
-        <button type="submit" disabled={!isValid}>
+        <button
+          className="form-container__button"
+          type="submit"
+          disabled={!isValid}
+        >
           Login
         </button>
       </Form>
