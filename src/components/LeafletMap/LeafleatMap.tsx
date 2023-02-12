@@ -10,7 +10,7 @@ const LeafletMap = ({ marks }: LeafletMapProps) => {
     <MapContainer
       center={[36.83814, -2.45974]}
       zoom={30}
-      scrollWheelZoom={false}
+      scrollWheelZoom={true}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

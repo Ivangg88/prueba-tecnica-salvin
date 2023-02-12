@@ -4,7 +4,7 @@ const HomePage = (): JSX.Element => {
   return (
     <HomePageStyled>
       <h1>HomePage</h1>
-      <h3>The app has 3 diferents routes, one of wich is a private route.</h3>
+      <h3>The app has 3 differents routes.</h3>
       <ul>
         <li key="home">
           <span>
@@ -17,14 +17,13 @@ const HomePage = (): JSX.Element => {
           {" "}
           <span>
             <span>'maps':</span> it is a private page which shows a map with
-            diferent marks, to navigate in the maps, you need to be logeed in
+            different marks. To navigate in the maps, you need to be logeed in
             within a maximum of 30 minutes.
           </span>
         </li>
         <li key="login">
           <span>
-            <span>'login':</span> it is the route to login where you can find a
-            login formular.
+            <span>'login':</span> it is the route to log in.
           </span>
         </li>
       </ul>
