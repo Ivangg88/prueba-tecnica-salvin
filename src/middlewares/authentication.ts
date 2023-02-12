@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import { Token } from "../types/interfaces";
-import { calculateMinutes } from "../utils/operationutils";
+import { calculateMinutes } from "../utils/operationUtils/operationutils";
 
 const auth = (token: string | null) => {
   const sessionTimeOut = 30;
