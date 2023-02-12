@@ -6,6 +6,7 @@ import {
   logoutUserActionCreator,
 } from "../store/userSlice";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const useUser = () => {
   const dispatch = useAppDispatch();
@@ -28,11 +29,11 @@ export const useUser = () => {
 
         localStorage.setItem("token", userToken);
         dispatch(loginUserActionCreator({ ...tokenPayload, token: userToken }));
-        alert(`User ${user.userName} logged`);
+        toast.success(`Welcome ${user.userName}`);
         navigate("/");
         return true;
       } catch (error: any) {
-        alert(error.message);
+        toast.error(error.message);
         return false;
       }
     },
@@ -40,8 +41,13 @@ export const useUser = () => {
   );
 
   const logoutUser = useCallback(async () => {
-    await localStorage.removeItem("token");
-    dispatch(logoutUserActionCreator());
+    try {
+      await localStorage.removeItem("token");
+      dispatch(logoutUserActionCreator());
+      toast.success("Logged out.");
+    } catch (error: any) {
+      toast.error(error.message);
+    }
   }, [dispatch]);
 
   return {

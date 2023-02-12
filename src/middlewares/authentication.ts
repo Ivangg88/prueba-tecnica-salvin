@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { Token } from "../types/interfaces";
 import { calculateMinutes } from "../utils/operationutils";
 
@@ -12,7 +13,7 @@ const auth = (token: string | null) => {
 
     return calculateMinutes(new Date(user.timeStamp)) < sessionTimeOut;
   } catch (error: any) {
-    alert(error.message);
+    toast.error(error.message);
   }
 };
 

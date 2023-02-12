@@ -18,7 +18,7 @@ const HomePage = (): JSX.Element => {
           <span>
             <span>'maps':</span> it is a private page which shows a map with
             diferent marks, to navigate in the maps, you need to be logeed in
-            within a maximunm of 30 minutes.
+            within a maximum of 30 minutes.
           </span>
         </li>
         <li key="login">
