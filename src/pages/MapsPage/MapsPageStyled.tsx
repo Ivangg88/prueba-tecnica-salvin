@@ -9,6 +9,8 @@ const MapsPageStyled = styled.div`
   .leaflet-container {
     width: 800px;
     height: 800px;
+    max-width: 100%;
+    max-height: 100%;
   }
 `;
 
