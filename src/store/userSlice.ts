@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { UserLoged } from "../types/interfaces";
-import { initialLoggedUser } from "../utils/initialStates";
+import { initialLoggedUser } from "../utils/initialStates/initialStates";
 
 const userSlice = createSlice({
   name: "user",

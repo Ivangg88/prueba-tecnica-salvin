@@ -1,5 +1,5 @@
-import auth from "../middlewares/authentication";
-import { Token, UserLoged } from "../types/interfaces";
+import auth from "../../middlewares/authentication";
+import { Token, UserLoged } from "../../types/interfaces";
 
 export const getInitialUser = (): UserLoged => {
   const token = localStorage.getItem("token");
@@ -10,7 +10,7 @@ export const getInitialUser = (): UserLoged => {
     const userLoged: UserLoged = {
       userName: user.userName,
       isLogged: auth(token)!,
-      timeStamp: new Date().toISOString(),
+      timeStamp: new Date().toLocaleString(),
       token: token,
     };
 
