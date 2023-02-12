@@ -15,21 +15,28 @@ const LoginFormikFormStyled = styled.div`
   }
 
   .errors {
+    width: 100%;
     text-align: center;
     color: #ff3131;
     font-weight: bold;
   }
 
   .form-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
 
+    &__input-field {
+      width: 100%;
+    }
+
     &__input {
       width: 100%;
       border: none;
       border-bottom: 2px solid black;
+      padding: 10px;
     }
 
     &__login-text {
