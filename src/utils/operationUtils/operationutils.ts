@@ -1,6 +1,6 @@
 export const calculateMinutes = (loginDate: Date) => {
   const diff =
-    (loginDate.getTime() - new Date(new Date().toLocaleString()).getTime()) /
-    1000;
+    (loginDate.getTime() - new Date(new Date().toISOString()).getTime()) / 1000;
+
   return Math.abs(Math.round(diff / 60));
 };
