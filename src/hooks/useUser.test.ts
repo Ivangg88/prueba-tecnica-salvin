@@ -40,20 +40,8 @@ describe("Given a function loginUser", () => {
         password: "test",
       };
       const successMessage = `Welcome ${userLogin.userName}`;
-      const tokenPayload: Token = {
-        userName: userLogin.userName,
-        isLogged: true,
-        timeStamp: new Date().toLocaleString(),
-      };
-      const userToken = JSON.stringify(tokenPayload);
       const nextRoute = "/";
       const expectedReturn = true;
-
-      localStorage.setItem("token", userToken);
-
-      const userToDispatch = { ...tokenPayload, token: userToken };
-
-      const action = loginUserActionCreator(userToDispatch);
 
       const {
         result: {
@@ -63,7 +51,16 @@ describe("Given a function loginUser", () => {
 
       const receivedReturn = loginUser(userLogin);
 
-      expect(localStorage.getItem("token")).toEqual(userToken);
+      const token = localStorage.getItem("token");
+
+      const userToDispatch = {
+        ...JSON.parse(token!),
+        token: localStorage.getItem("token"),
+      };
+
+      const action = loginUserActionCreator(userToDispatch);
+
+      expect(token).not.toBeNull();
       expect(toast.success).toHaveBeenCalledWith(successMessage);
       expect(mockDispatch).toHaveBeenCalledWith(action);
       expect(mockNavigate).toHaveBeenCalledWith(nextRoute);

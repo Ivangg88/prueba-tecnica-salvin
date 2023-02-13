@@ -15,7 +15,7 @@ describe("Given a function auth", () => {
     test("Then it should return true", () => {
       const tokenPayload: Token = {
         isLogged: false,
-        timeStamp: loginDate.toLocaleString(),
+        timeStamp: loginDate.toISOString(),
         userName: "test user",
       };
       const token = JSON.stringify(tokenPayload);
@@ -26,11 +26,10 @@ describe("Given a function auth", () => {
 
   describe("When is called with a valid token wich was created more then 30 minutes before", () => {
     test("Then it should return false", () => {
-      const timeOutedLogin = loginDate.setMinutes(loginDate.getMinutes() + 31);
-
+      loginDate.setMinutes(loginDate.getMinutes() + 31);
       const tokenPayload: Token = {
         isLogged: false,
-        timeStamp: timeOutedLogin.toLocaleString(),
+        timeStamp: loginDate.toISOString(),
         userName: "test user",
       };
       const token = JSON.stringify(tokenPayload);
