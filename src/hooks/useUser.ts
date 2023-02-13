@@ -22,7 +22,7 @@ export const useUser = () => {
         const tokenPayload: Token = {
           userName: user.userName,
           isLogged: true,
-          timeStamp: new Date().toLocaleString(),
+          timeStamp: new Date().toISOString(),
         };
 
         const userToken = JSON.stringify(tokenPayload);
