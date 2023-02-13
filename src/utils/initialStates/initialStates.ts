@@ -10,7 +10,7 @@ export const getInitialUser = (): UserLoged => {
     const userLoged: UserLoged = {
       userName: user.userName,
       isLogged: auth(token)!,
-      timeStamp: new Date().toISOString(),
+      timeStamp: new Date(user.timeStamp).toISOString(),
       token: token,
     };
 

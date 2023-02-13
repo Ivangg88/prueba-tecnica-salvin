@@ -6,7 +6,7 @@ describe("Given a function calculateMinutes", () => {
     test("Then it should return 0", () => {
       const expectedResult = 0;
       const receiveResult = calculateMinutes(
-        new Date(actualDate.toLocaleString())
+        new Date(actualDate.toISOString())
       );
 
       expect(receiveResult).toBe(expectedResult);

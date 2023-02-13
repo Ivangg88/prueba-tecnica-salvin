@@ -10,7 +10,7 @@ describe("Given a function getInitialUser", () => {
     test("Then it should return the initial user with the data from localStorage with the property isLogged seted true and the property token with the token.", () => {
       const tokenPayload: Token = {
         isLogged: false,
-        timeStamp: new Date().toLocaleString(),
+        timeStamp: new Date().toISOString(),
         userName: "test user",
       };
 
