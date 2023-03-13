@@ -8,11 +8,8 @@ export const VideoCamStyled = styled.div`
     justify-content: flex-start;
     gap: 20px;
     position: absolute;
-
     padding: 10px;
     box-shadow: 0px 0px 15px #444444;
-    bottom: 50px;
-    left: 50px;
   }
 
   .video {
@@ -30,7 +27,6 @@ export const VideoCamStyled = styled.div`
 
   .custom-button {
     border: none;
-
     display: flex;
     align-items: center;
     background-color: transparent;
@@ -38,10 +34,5 @@ export const VideoCamStyled = styled.div`
 
   .custom-button:hover {
     color: blue;
-  }
-
-  .icon {
-    height: 50px;
-    width: 50px;
   }
 `;
