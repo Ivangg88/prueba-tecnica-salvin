@@ -18,7 +18,7 @@ export const VideoCamStyled = styled.div`
     aspect-ratio: auto 640 / 480;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(http://192.168.1.80:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=SmartecCam002&pwd=Smartec.2021);
+    background-image: url(http://camaras.salvi.es:88/cgi-bin/CGIStream.cgi?cmd=GetMJStream&usr=SmartecCam002&pwd=Smartec.2021);
   }
 
   [draggable="true"] {
