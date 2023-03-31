@@ -32,6 +32,12 @@ const App = (): JSX.Element => {
           <Route path="/home" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
 
+          {isLogged ? (
+            <Route path="/login" element={<LoginPage />} />
+          ) : (
+            <Navigate to={"/login"} />
+          )}
+
           <Route
             path="/maps"
             element={

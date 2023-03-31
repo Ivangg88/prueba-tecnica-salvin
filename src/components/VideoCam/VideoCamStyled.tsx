@@ -30,6 +30,7 @@ export const VideoCamStyled = styled.div`
     display: flex;
     align-items: center;
     background-color: transparent;
+    height: 50px;
   }
 
   .custom-button:hover {
